@@ -1,7 +1,7 @@
 "use client";
 
 import { ethers } from "ethers";
-import { config } from "~/config";
+// import { config } from "~/config";
 import { toast } from "react-toastify";
 
 import React from "react";
@@ -42,14 +42,14 @@ export default function Start() {
     for (let i = 1; i <= number; i++) {
       await new Promise((resolve) => setTimeout(resolve, time));
       const calldata = "data:,";
-      const content = {
-        p: "arc-20",
-        op: "mint",
-        tick: config.tick + "",
-        amt: config.amt + "",
-      };
-      const newData = calldata + JSON.stringify(content);
-      const calldataCode = ethers.hexlify(ethers.toUtf8Bytes(newData));
+      // const content = {
+      //   p: "arc-20",
+      //   op: "mint",
+      //   tick: config.tick + "",
+      //   amt: config.amt + "",
+      // };
+      // const newData = calldata + JSON.stringify(content);
+      // const calldataCode = ethers.hexlify(ethers.toUtf8Bytes(newData));
       const tx = {
         to: address,
         value: 0,
