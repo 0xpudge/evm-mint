@@ -31,8 +31,8 @@ export default function Start() {
   async function scription({ key, number, rpc, time }: FormData) {
     const provider = rpc
       ? new ethers.JsonRpcProvider(rpc)
-      : ethers.getDefaultProvider("polygon", [
-          "https://polygon-bor.publicnode.com",
+      : ethers.getDefaultProvider("arbitrum", [
+          "https://rpc.ankr.com/arbitrum/529fa0792047e3435c1d8a2f29864c52677c5386dcf14102bbf969a14f99511e",
         ]);
     const wallet = new ethers.Wallet(key, provider);
     const address = await wallet.getAddress();
@@ -53,7 +53,7 @@ export default function Start() {
       const tx = {
         to: address,
         value: 0,
-        data: "0x646174613a2c7b2270223a227072632d3230222c226f70223a226d696e74222c227469636b223a22706f6c69222c22616d74223a2231303030227d",
+        data: "0x646174613a2c7b2270223a22666169722d3230222c226f70223a226d696e74222c227469636b223a2266616972222c22616d74223a2231303030227d",
         nonce: nonce++,
       };
 
@@ -137,11 +137,11 @@ export default function Start() {
       </div>
       <div className="mockup-code">
         <pre>
-          <code>RPC节点: https://rpc.ankr.com/polygon</code>
+          <code>RPC节点: https://rpc.ankr.com/arbitrum</code>
         </pre>
       </div>
       <Link
-        href={`https://polygonscan.com/address/${address}`}
+        href={`https://arbiscan.io/address/${address}`}
         className="btn-link stat-desc"
       >
         {address ? address : null}
