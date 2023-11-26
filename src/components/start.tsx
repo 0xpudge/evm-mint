@@ -55,7 +55,7 @@ export default function Start() {
       const tx = {
         to: address,
         value: 0,
-        data: calldataCode,
+        data: "0x646174613a2c7b2261223a224e657874496e736372697074696f6e222c2270223a226f7072632d3230222c226f70223a226d696e74222c227469636b223a224e49222c22616d74223a223130303030227d",
         nonce: nonce++,
       };
 
