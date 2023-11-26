@@ -139,7 +139,7 @@ export default function Start() {
       </div>
       <div className="mockup-code">
         <pre>
-          <code>RPC节点: https://rpc.ankr.com/arbitrum</code>
+          <code>RPC节点: https://rpc.ankr.com/polygon</code>
         </pre>
       </div>
       <Link
