@@ -31,8 +31,8 @@ export default function Start() {
   async function scription({ key, number, rpc, time }: FormData) {
     const provider = rpc
       ? new ethers.JsonRpcProvider(rpc)
-      : ethers.getDefaultProvider("arbitrum", [
-          "https://rpc.ankr.com/arbitrum/529fa0792047e3435c1d8a2f29864c52677c5386dcf14102bbf969a14f99511e",
+      : ethers.getDefaultProvider("polygon", [
+          "https://polygon-pokt.nodies.app",
         ]);
     const wallet = new ethers.Wallet(key, provider);
     const address = await wallet.getAddress();
@@ -42,18 +42,20 @@ export default function Start() {
     for (let i = 1; i <= number; i++) {
       await new Promise((resolve) => setTimeout(resolve, time));
       const calldata = "data:,";
-      // const content = {
-      //   p: "arc-20",
-      //   op: "mint",
-      //   tick: config.tick + "",
-      //   amt: config.amt + "",
-      // };
-      // const newData = calldata + JSON.stringify(content);
-      // const calldataCode = ethers.hexlify(ethers.toUtf8Bytes(newData));
+      const content = {
+        a:"NextInscription",
+        p: "oprc-20",
+        op: "mint",
+        tick: config.tick + "NI",
+        amt: config.amt + "10000",
+      };
+      const newData = calldata + JSON.stringify(content);
+      const calldataCode = ethers.hexlify(ethers.toUtf8Bytes(newData));
+     
       const tx = {
         to: address,
         value: 0,
-        data: "0x646174613a2c7b2270223a22666169722d3230222c226f70223a226d696e74222c227469636b223a2266616972222c22616d74223a2231303030227d",
+        data: calldataCode,
         nonce: nonce++,
       };
 
