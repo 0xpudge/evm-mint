@@ -143,7 +143,7 @@ export default function Start() {
         </pre>
       </div>
       <Link
-        href={`https://arbiscan.io/address/${address}`}
+        href={`https://polygonscan.com/address/${address}`}
         className="btn-link stat-desc"
       >
         {address ? address : null}
