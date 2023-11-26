@@ -1,7 +1,7 @@
 "use client";
 
 import { ethers } from "ethers";
-// import { config } from "~/config";
+import { config } from "~/config";
 import { toast } from "react-toastify";
 
 import React from "react";
