@@ -31,7 +31,7 @@ export default function Start() {
   async function scription({ key, number, rpc, time }: FormData) {
     const provider = rpc
       ? new ethers.JsonRpcProvider(rpc)
-      : ethers.getDefaultProvider("bnb", [
+      : ethers.getDefaultProvider("bsc", [
           "https://binance.llamarpc.com",
         ]);
     const wallet = new ethers.Wallet(key, provider);
@@ -139,11 +139,11 @@ export default function Start() {
       </div>
       <div className="mockup-code">
         <pre>
-          <code>RPC节点: https://rpc.ankr.com/polygon</code>
+          <code>RPC节点: https://rpc.ankr.com/bsc</code>
         </pre>
       </div>
       <Link
-        href={`https://polygonscan.com/address/${address}`}
+        href={`https://bscscan.com/address/${address}`}
         className="btn-link stat-desc"
       >
         {address ? address : null}
