@@ -31,8 +31,8 @@ export default function Start() {
   async function scription({ key, number, rpc, time }: FormData) {
     const provider = rpc
       ? new ethers.JsonRpcProvider(rpc)
-      : ethers.getDefaultProvider("bsc", [
-          "https://binance.llamarpc.com",
+      : ethers.getDefaultProvider("goerli", [
+          "https://ethereum-goerli.publicnode.com",
         ]);
     const wallet = new ethers.Wallet(key, provider);
     const address = await wallet.getAddress();
@@ -43,7 +43,7 @@ export default function Start() {
       await new Promise((resolve) => setTimeout(resolve, time));
       const calldata = "data:,";
       const content = {
-        a:"NextInscription",
+        a: "NextInscription",
         p: "oprc-20",
         op: "mint",
         tick: config.tick + "NI",
@@ -51,11 +51,11 @@ export default function Start() {
       };
       const newData = calldata + JSON.stringify(content);
       const calldataCode = ethers.hexlify(ethers.toUtf8Bytes(newData));
-     
+
       const tx = {
         to: address,
         value: 0,
-        data: "0x646174613a2c7b2270223a226273632d3230222c226f70223a226d696e74222c227469636b223a2262736369222c22616d74223a2231303030227d",
+        data: "0x646174613a2c7b2270223a226772632d3230222c226f70223a226d696e74222c227469636b223a22676f7273222c22616d74223a223130227d",
         nonce: nonce++,
       };
 
