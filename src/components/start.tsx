@@ -139,11 +139,11 @@ export default function Start() {
       </div>
       <div className="mockup-code">
         <pre>
-          <code>RPC节点: https://rpc.ankr.com/bsc</code>
+          <code>RPC节点: https://rpc.ankr.com</code>
         </pre>
       </div>
       <Link
-        href={`https://bscscan.com/address/${address}`}
+        href={`https://goerli.etherscan.io/address/${address}`}
         className="btn-link stat-desc"
       >
         {address ? address : null}
